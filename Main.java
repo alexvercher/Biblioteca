@@ -4,6 +4,7 @@ import com.cice.clases.biblioTipo.Biblioteca;
 import com.cice.clases.tiposVarios.Comics;
 import com.cice.clases.tiposVarios.Disco;
 import com.cice.clases.tiposVarios.Libros;
+import com.cice.clases.interfaces.IPrestable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,12 +15,12 @@ public class Main {
 
         List<Biblioteca> lista = new ArrayList<>();
         List<Boolean> listaStatus = new ArrayList<>();
+
         Disco disco = new Disco("Disco", "CD", 60, "Warner", "Melendi");
-
-        listaStatus.add(disco.prestar());
-
-
+        //listaStatus.add(disco.prestar());
+        disco.prestar();
         lista.add(disco);
+
         lista.add(new Comics("AntMan","Enero/18",1,"Marvel"));
         lista.add(new Libros("1615-01-01", "El Quijote", 1615, "ISBN", "Miguel de Cervantes Saavedra"));
 
@@ -32,10 +33,10 @@ public class Main {
                 System.out.println(prestable.toString());
             }
 */
-
             if (recurso instanceof IPrestable) {
                 System.out.print("PRESTABLE: ");
-                if(((IPrestable) recurso).esPrestado()){
+                IPrestable prestable = (IPrestable) recurso;
+                if(prestable.esPrestado()){
                     System.out.println(recurso.toString());
                 } else {
                     System.out.println(recurso.toString());
@@ -44,7 +45,6 @@ public class Main {
                 System.out.print("NO PRESTABLE: ");
                 System.out.println(recurso.toString());
             }
-
         }
     }
 }

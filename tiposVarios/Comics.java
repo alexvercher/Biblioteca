@@ -28,4 +28,12 @@ public class Comics extends BiblioPapel {
     public void setColeccion(String coleccion) {
         this.coleccion = coleccion;
     }
+
+    @Override
+    public String toString() {
+        return "Comics{" +
+                "numero=" + numero +
+                ", coleccion='" + coleccion + '\'' +
+                '}';
+    }
 }
