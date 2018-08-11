@@ -1,6 +1,6 @@
 package com.cice.clases.biblioTipo;
 
-public class BiblioPapel {
+public class BiblioPapel extends Biblioteca{
 
     private String fecha_publicacion;
     private String nombre;

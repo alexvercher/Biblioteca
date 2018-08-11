@@ -2,7 +2,7 @@ package com.cice.clases.biblioTipo;
 
 import java.util.Enumeration;
 
-public class BiblioMultimedia {
+public class BiblioMultimedia extends Biblioteca{
 
     private String titulo;
     private String formato;
